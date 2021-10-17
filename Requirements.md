@@ -25,7 +25,7 @@ unassigned from the driver
 
 ## End points:
 
-[ ] Retrieve drivers
+[X] Retrieve drivers
 
 [ ] Retrieve orders
 
