@@ -27,7 +27,7 @@ unassigned from the driver
 
 [X] Retrieve drivers
 
-[ ] Retrieve orders
+[X] Retrieve orders
 
 [ ] Assign an order to a driver
 

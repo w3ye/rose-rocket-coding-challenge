@@ -17,7 +17,7 @@ module.exports = (db) => {
 
   /**
    * Retrieve driver info by driver id
-   * @param {int} id Driver id
+   * @param {Number} id Driver id
    * @returns {Promise}
    */
   const getDriver = (id) => {
