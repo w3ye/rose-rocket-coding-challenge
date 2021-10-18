@@ -20,9 +20,11 @@ describe("orderHelpers", () => {
     await expect(orderHelpers.getOrder(1).revenue_cents).not.toEqual(320000);
     // change order's revenue
     changedOrder.revenue_cents = 320000;
+
     await orderHelpers.updateOrder(changedOrder);
+
     const order = await orderHelpers.getOrder(1);
-    expect(order.revenue_cents).toEqual(320000);
+    expect(order).toEqual(changedOrder);
   });
 
   it(`Should update an order's cost`, async () => {
@@ -33,15 +35,29 @@ describe("orderHelpers", () => {
     );
 
     await orderHelpers.updateOrder(changedOrder);
+
     const order = await orderHelpers.getOrder(1);
-    expect(order.cost_cents).toEqual(100);
+    expect(order).toEqual(changedOrder);
   });
 
   it(`Should remove a driver from an order`, async () => {
     changedOrder.driver_id = null;
     await expect(orderHelpers.getOrder(1).driver_id).not.toEqual(null);
+
+    await orderHelpers.updateOrder(changedOrder);
+
+    const order = await orderHelpers.getOrder(1);
+    expect(order).toEqual(changedOrder);
+  });
+
+  it("Should assign order 1 to driver 2", async () => {
+    changedOrder.driver_id = 2;
+    await expect(orderHelpers.getOrder(1).driver_id).not.toEqual(
+      changedOrder.driver_id
+    );
+
     await orderHelpers.updateOrder(changedOrder);
     const order = await orderHelpers.getOrder(1);
-    expect(order.driver_id).toBe(null);
+    expect(order).toEqual(changedOrder);
   });
 });
