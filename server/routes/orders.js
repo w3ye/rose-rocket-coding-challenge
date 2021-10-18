@@ -12,5 +12,25 @@ module.exports = (db) => {
       });
   });
 
+  router.get("/:id", (req, res) => {
+    db.getOrder(req.params.id)
+      .then((order) => {
+        res.json(order);
+      })
+      .catch((err) => {
+        res.json({ error: err.message });
+      });
+  });
+
+  router.put("/", (req, res) => {
+    db.updateOrder(req.body)
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((err) => {
+        res.json({ error: err.message });
+      });
+  });
+
   return router;
 };

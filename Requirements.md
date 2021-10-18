@@ -21,7 +21,7 @@ unassigned from the driver
 
 ## Back-end
 
-[ ] Backend must persist data
+[X] Backend must persist data
 
 ## End points:
 
@@ -29,16 +29,16 @@ unassigned from the driver
 
 [X] Retrieve orders
 
-[ ] Assign an order to a driver
+[X] Assign an order to a driver
 
-[ ] Unassign an order
+[X] Unassign an order
 
-[ ] Modify the cost and revenue of an order
+[X] Modify the cost and revenue of an order
 
 ## Technology
 
-[ ] Front end javascript
-[ ] Backend NodeJS or GO
+[X] Front end javascript
+[X] Backend NodeJS or GO
 [ ] Installable and runnable
 
 ## Minmimum Requirements
