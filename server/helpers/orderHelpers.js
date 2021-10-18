@@ -50,7 +50,7 @@ module.exports = (db) => {
       values: [
         order.revenue_cents,
         order.cost_cents,
-        order._driver_id,
+        order.driver_id,
         order.id,
       ],
     };
