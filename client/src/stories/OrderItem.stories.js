@@ -2,7 +2,7 @@ import OrderItem from "../components/OrderItem";
 import "../components/App.scss";
 
 export default {
-  title: "OrderItem",
+  title: "Order Item",
   component: OrderItem,
 };
 const order = {
