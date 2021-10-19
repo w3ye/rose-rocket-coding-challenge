@@ -1,5 +1,5 @@
 /**
- * Convert cents to dollar and cents
+ * Convert cents to dollars
  * @param {Object} order
  * @returns {Object}
  */
@@ -9,6 +9,20 @@ const humanizeMoney = (order) => {
     ...rest,
     revenue: revenue_cents / 100,
     cost: cost_cents / 100,
+  };
+};
+
+/**
+ * Convert dollars into cents
+ * @param {Object} order
+ * @returns {Object}
+ */
+const unHumanizeMoney = (order) => {
+  const { revenue, cost, ...rest } = order;
+  return {
+    ...rest,
+    revenue_cents: revenue * 100,
+    cost_cents: cost * 100,
   };
 };
 
@@ -55,6 +69,7 @@ module.exports = (db) => {
    * @returns {Promise}
    */
   const updateOrder = (order) => {
+    const unHuamizedOrder = unHumanizeMoney(order);
     const query = {
       text: `
         UPDATE orders
@@ -66,10 +81,10 @@ module.exports = (db) => {
         RETURNING *;
       `,
       values: [
-        order.revenue_cents,
-        order.cost_cents,
-        order.driver_id,
-        order.id,
+        unHuamizedOrder.revenue_cents,
+        unHuamizedOrder.cost_cents,
+        unHuamizedOrder.driver_id,
+        unHuamizedOrder.id,
       ],
     };
 
