@@ -1,0 +1,18 @@
+.list-wrapper {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 100%;
+  margin: 0 4px;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 272px;
+  border: 3px solid black;
+}
+
+.list-header {
+  flex: 0 0 auto;
+  min-height: 20px;
+  padding: 10px 8px;
+  position: relative;
+  background-color: red;
+}
