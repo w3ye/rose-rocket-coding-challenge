@@ -1,3 +1,17 @@
+/**
+ * Convert cents to dollar and cents
+ * @param {Object} order
+ * @returns {Object}
+ */
+const humanizeMoney = (order) => {
+  const { revenue_cents, cost_cents, ...rest } = order;
+  return {
+    ...rest,
+    revenue: revenue_cents / 100,
+    cost: cost_cents / 100,
+  };
+};
+
 module.exports = (db) => {
   /**
    * Retrieve all orders from database
@@ -8,7 +22,11 @@ module.exports = (db) => {
     return db
       .query(query)
       .then((result) => {
-        return result.rows;
+        const orders = [];
+        result.rows.forEach((order) => {
+          orders.push(humanizeMoney(order));
+        });
+        return orders;
       })
       .catch((err) => {
         return err;
@@ -24,7 +42,7 @@ module.exports = (db) => {
     return db
       .query("SELECT * FROM orders WHERE id = $1;", [id])
       .then((result) => {
-        return result.rows[0];
+        return humanizeMoney(result.rows[0]);
       })
       .catch((err) => {
         return err;
