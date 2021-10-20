@@ -39,3 +39,7 @@
 .driver-col {
   display: flex;
 }
+
+.driver-col-first {
+  order: -1;
+}
