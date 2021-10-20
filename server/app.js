@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/api/drivers", driversRouter(driverHelpers));
+app.use("/api/drivers", driversRouter(driverHelpers, orderHelpers));
 app.use("/api/orders", ordersRouter(orderHelpers));
 
 module.exports = app;
