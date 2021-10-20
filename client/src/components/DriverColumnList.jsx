@@ -1,7 +1,18 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import DriverColumnItem from "../components/DriverColumnItem";
-import useOrders from "../hooks/useOrders";
 
 export default function DriverColumnList(props) {
-  const { orders } = useOrders();
-  return <DriverColumnItem orders={orders} />;
+  const [driversOrders, setDriversOrders] = useState([]);
+  useEffect(() => {
+    axios.get("/api/drivers/orders").then((result) => {
+      setDriversOrders(result.data);
+    });
+  }, []);
+
+  const parsedDriverOrders = driversOrders.map((driverOrder, index) => {
+    return <DriverColumnItem driverOrder={driverOrder} key={index} />;
+  });
+
+  return <div className="driver-col">{parsedDriverOrders}</div>;
 }
