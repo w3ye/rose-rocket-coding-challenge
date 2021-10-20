@@ -4,8 +4,8 @@ export default function OrderItemList(props) {
   const { orders } = props;
   const parsedOrders = orders.map((i) => {
     return (
-      <div className="list-item">
-        <OrderItem order={i} />
+      <div className="list-item" key={i.id}>
+        <OrderItem order={i} key={i.id} />
       </div>
     );
   });
