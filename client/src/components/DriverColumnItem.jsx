@@ -1,14 +1,21 @@
 import { Fragment } from "react";
 import OrderItemList from "./OrderItemList";
 import { useDrop } from "react-dnd";
+import axios from "axios";
 
 export default function DriverColumnItem(props) {
   const { driverOrder } = props;
 
   const [, drop] = useDrop(() => ({
     accept: "card",
-    drop: () => console.log("land here"),
+    drop: (item) => handleDrop(item),
   }));
+
+  const handleDrop = async (item) => {
+    const _item = item;
+    _item.driver_id = driverOrder.id;
+    await axios.put("/api/orders", _item);
+  };
   return (
     <>
       {driverOrder.id === null ? (

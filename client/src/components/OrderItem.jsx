@@ -2,10 +2,12 @@ import { useDrag } from "react-dnd";
 export default function OrderItem(props) {
   const { order } = props;
 
+  // eslint-disable-next-line no-unused-vars
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "card",
+    item: order,
     collection: (monitor) => ({
-      isDragging: !!monitor.isDraggin(),
+      isDragging: !!monitor.isDragging(),
     }),
   }));
 
