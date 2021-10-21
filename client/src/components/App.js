@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.scss";
-import DriverColumnList from "./DriverColumnList";
+import ColumnList from "./ColumnList";
 
 function App() {
   const [drivers, setDrivers] = useState([]);
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <DriverColumnList drivers={drivers} />
+      <ColumnList drivers={drivers} />
     </div>
   );
 }

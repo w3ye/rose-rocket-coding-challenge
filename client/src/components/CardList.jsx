@@ -1,4 +1,4 @@
-import OrderItem from "./OrderItem";
+import Card from "./Card";
 
 export default function OrderItemList(props) {
   const { orders } = props;
@@ -6,7 +6,7 @@ export default function OrderItemList(props) {
   const parsedOrders = orders.map((i) => {
     return (
       <div className="list-item" key={i.id}>
-        <OrderItem order={i} key={i.id} />
+        <Card order={i} key={i.id} />
       </div>
     );
   });
