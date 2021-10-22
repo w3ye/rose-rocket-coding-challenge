@@ -20,16 +20,22 @@ export default function DriverColumnItem(props) {
   return (
     <>
       {driverOrder.id === null ? (
-        <div className="list-wrapper driver-col-first" ref={drop}>
-          <div className="list-header">Unassigned Orders</div>
-          <CardList orders={driverOrder.orders} updateOrder={updateOrder} />
+        <div className="column driver-col-first" ref={drop}>
+          <div className="column-header">Unassigned Orders</div>
+          <div className="list">
+            <CardList orders={driverOrder.orders} updateOrder={updateOrder} />
+            <div className="total">total</div>
+          </div>
         </div>
       ) : (
-        <div className="list-wrapper" ref={drop}>
-          <div className="list-header">
+        <div className="column" ref={drop}>
+          <div className="column-header">
             Drivers {driverOrder.first_name} {driverOrder.last_name}{" "}
           </div>
-          <CardList orders={driverOrder.orders} updateOrder={updateOrder} />
+          <div className="list">
+            <CardList orders={driverOrder.orders} updateOrder={updateOrder} />
+            <div className="total">total</div>
+          </div>
         </div>
       )}
     </>

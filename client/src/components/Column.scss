@@ -1,6 +1,7 @@
-.list-wrapper {
+.column {
   box-sizing: border-box;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   height: 800px;
   margin: 0 5px;
   vertical-align: top;
@@ -14,6 +15,16 @@
     padding-right: 10px;
     list-style: none;
   }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .total {
+      margin-top: auto;
+    }
+  }
 }
 
 .list-heading {
@@ -24,7 +35,7 @@
   text-align: center;
 }
 
-.list-header {
+.column-header {
   flex: 0 0 auto;
   text-align: center;
   min-height: 20px;
