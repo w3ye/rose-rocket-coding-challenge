@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import CardList from "./CardList";
 import { useDrop } from "react-dnd";
+import Total from "./Total";
 
 export default function DriverColumnItem(props) {
   const { driverOrder, updateOrder } = props;
@@ -24,7 +25,7 @@ export default function DriverColumnItem(props) {
           <div className="column-header">Unassigned Orders</div>
           <div className="list">
             <CardList orders={driverOrder.orders} updateOrder={updateOrder} />
-            <div className="total">total</div>
+            <Total />
           </div>
         </div>
       ) : (
@@ -34,7 +35,7 @@ export default function DriverColumnItem(props) {
           </div>
           <div className="list">
             <CardList orders={driverOrder.orders} updateOrder={updateOrder} />
-            <div className="total">total</div>
+            <Total />
           </div>
         </div>
       )}
