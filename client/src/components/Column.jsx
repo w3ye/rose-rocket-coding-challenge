@@ -4,7 +4,7 @@ import { useDrop } from "react-dnd";
 import Total from "./Total";
 
 export default function DriverColumnItem(props) {
-  const { driverOrder, updateOrder } = props;
+  const { driverOrder, updateOrder, deleteDriver } = props;
 
   const [, drop] = useDrop(() => ({
     accept: "card",
@@ -16,6 +16,10 @@ export default function DriverColumnItem(props) {
     const _order = order;
     _order.driver_id = driverOrder.id;
     updateOrder(_order);
+  };
+
+  const handleDelete = () => {
+    deleteDriver(driverOrder.id);
   };
 
   return (
@@ -32,6 +36,9 @@ export default function DriverColumnItem(props) {
         <div className="column" ref={drop}>
           <div className="column-header">
             Drivers {driverOrder.first_name} {driverOrder.last_name}{" "}
+            <div>
+              <button onClick={handleDelete}>Delete </button>
+            </div>
           </div>
           <div className="list">
             <CardList orders={driverOrder.orders} updateOrder={updateOrder} />

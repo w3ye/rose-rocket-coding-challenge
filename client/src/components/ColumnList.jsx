@@ -6,14 +6,24 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import useOrders from "./hooks/useOrders";
 
 export default function DriverColumnList(props) {
-  const { driversOrders, getDriversOrders, updateOrder } = useOrders();
+  const {
+    driversOrders,
+    getDriversOrders,
+    updateOrder,
+    deleteDriver,
+  } = useOrders();
   useEffect(() => {
     getDriversOrders();
   }, []);
 
   const parsedDriverOrders = driversOrders.map((driverOrder, index) => {
     return (
-      <Column driverOrder={driverOrder} key={index} updateOrder={updateOrder} />
+      <Column
+        driverOrder={driverOrder}
+        key={index}
+        updateOrder={updateOrder}
+        deleteDriver={deleteDriver}
+      />
     );
   });
 

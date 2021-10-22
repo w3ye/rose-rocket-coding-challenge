@@ -25,5 +25,22 @@ export default function useOrders() {
       });
   }
 
-  return { driversOrders, setDriversOrders, getDriversOrders, updateOrder };
+  function deleteDriver(driverId) {
+    axios
+      .delete(`/api/delete/driver/${driverId}`)
+      .then((result) => {
+        getDriversOrders();
+      })
+      .catch((err) => {
+        return err;
+      });
+  }
+
+  return {
+    driversOrders,
+    setDriversOrders,
+    getDriversOrders,
+    updateOrder,
+    deleteDriver,
+  };
 }
