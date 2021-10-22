@@ -22,12 +22,23 @@ module.exports = (db) => {
    */
   const getDriver = (id) => {
     const query = {
-      text: "SELECT * FROM drivers WHERE id = $1",
+      text: "SELECT * FROM drivers WHERE id = $1;",
       values: [id],
     };
 
     return db
       .query(query)
+      .then((result) => {
+        return result.rows[0];
+      })
+      .catch((err) => {
+        return err;
+      });
+  };
+
+  const deleteDriver = (id) => {
+    return db
+      .query("DELETE FROM drivers WHERE id = $1 RETURNING *;", [id])
       .then((result) => {
         return result.rows[0];
       })
