@@ -2,22 +2,22 @@
 
 ## Overall
 
-[ ] A user must be able to take an unassigned order, and assign it to a driver
+[X] A user must be able to take an unassigned order, and assign it to a driver
 
-[ ] A user must be able to take an order that is assigned to a driver, and assign it to a different driver
+[X] A user must be able to take an order that is assigned to a driver, and assign it to a different driver
 
-[ ] A user must be able to take an order that is assigned to a driver, and un-assign it
+[X] A user must be able to take an order that is assigned to a driver, and un-assign it
 
-[ ] A user must be able to edit the cost and revenue of an order if and only if it is
+[X] A user must be able to edit the cost and revenue of an order if and only if it is
 unassigned from the driver
 
 ## UI
 
-[ ] Must display orders, drivers and visually indicate which order is assigned to which driver
+[X] Must display orders, drivers and visually indicate which order is assigned to which driver
 
-[ ] A user must be able to change the assignment of an order by drag and drop
+[X] A user must be able to change the assignment of an order by drag and drop
 
-[ ] A user must be able to edit the cost and revenue of the order
+[X] A user must be able to edit the cost and revenue of the order
 
 ## Back-end
 
@@ -63,7 +63,7 @@ unassigned from the driver
 
 [ ] Back-end written in Golang
 
-[ ] Implement some tests (unit, component, E2E)
+[X] Implement some tests (unit, component, E2E)
 
 [ ] Allow Editing revenue/cost when order is assigned to a driver, the total becomes dynamic
 
