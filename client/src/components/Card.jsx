@@ -1,6 +1,9 @@
+import { useState, Fragment } from "react";
 import { useDrag } from "react-dnd";
+import CardForm from "./CardForm";
 export default function OrderItem(props) {
-  const { order } = props;
+  const { order, updateOrder } = props;
+  const [mode, setMode] = useState("");
 
   // eslint-disable-next-line no-unused-vars
   const [{ isDragging }, drag] = useDrag(() => ({
@@ -11,14 +14,28 @@ export default function OrderItem(props) {
     }),
   }));
 
+  const handleEdit = () => {
+    setMode("edit");
+  };
+
+  const revenue = ((+order.revenue * 100) / 100).toFixed(2);
+  const cost = ((+order.cost * 100) / 100).toFixed(2);
+
   return (
-    <div className="card" ref={drag}>
-      <span className="description">{order.description}</span>
-      <span className="revenue">${order.revenue}</span>
-      <span className="cost">${order.cost}</span>
-      <button type="button" className="edit">
-        Edit
-      </button>
-    </div>
+    <>
+      {mode === "" && (
+        <div className="card" ref={drag}>
+          <span className="description">{order.description}</span>
+          <span className="revenue">${revenue}</span>
+          <span className="cost">${cost}</span>
+          <button type="button" className="edit" onClick={handleEdit}>
+            Edit
+          </button>
+        </div>
+      )}
+      {mode === "edit" && (
+        <CardForm order={order} setMode={setMode} updateOrder={updateOrder} />
+      )}
+    </>
   );
 }

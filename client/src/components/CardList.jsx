@@ -1,12 +1,12 @@
 import Card from "./Card";
 
 export default function OrderItemList(props) {
-  const { orders } = props;
+  const { orders, updateOrder } = props;
 
   const parsedOrders = orders.map((i) => {
     return (
       <div className="list-item" key={i.id}>
-        <Card order={i} key={i.id} />
+        <Card order={i} key={i.id} updateOrder={updateOrder} />
       </div>
     );
   });

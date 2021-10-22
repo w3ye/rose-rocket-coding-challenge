@@ -1,26 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import Column from "./Column";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import useOrders from "./hooks/useOrders";
 
 export default function DriverColumnList(props) {
-  const [driversOrders, setDriversOrders] = useState([]);
-
+  const { driversOrders, getDriversOrders, updateOrder } = useOrders();
   useEffect(() => {
-    // Fetch and setState of drivers and their orders
-    axios.get("/api").then((result) => {
-      setDriversOrders(result.data);
-    });
+    getDriversOrders();
   }, []);
 
   const parsedDriverOrders = driversOrders.map((driverOrder, index) => {
     return (
-      <Column
-        driverOrder={driverOrder}
-        key={index}
-        setDriversOrders={setDriversOrders}
-      />
+      <Column driverOrder={driverOrder} key={index} updateOrder={updateOrder} />
     );
   });
 
