@@ -13,13 +13,15 @@ export default function OrderItemList(props) {
 
   return (
     <ul>
-      <div className="list-heading">
-        <span>Description</span>
-        <span>Revenue</span>
-        <span>Cost</span>
-        <span></span>
-      </div>
-      {parsedOrders}
+      <li>
+        <div className="list-heading">
+          <span>Description</span>
+          <span>Revenue</span>
+          <span>Cost</span>
+          <span></span>
+        </div>
+        {parsedOrders}
+      </li>
     </ul>
   );
 }
