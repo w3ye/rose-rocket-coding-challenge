@@ -11,7 +11,9 @@ The front end of this project is written in ReactJS
 
 ## Back-end setup
 
-For this project, I've decided to use [PostgreSQL](https://www.postgresql.org/) as my database. Documentation for PostgreSQL can be found [here](https://www.postgresql.org/docs/14/index.html)
+For this project, I've decided to use [PostgreSQL](https://www.postgresql.org/) as my database.
+
+Documentation for PostgreSQL can be found [here](https://www.postgresql.org/docs/14/index.html)
 
 SQL queries to create `drivers` and `orders` table is found in `/server/schema`
 
@@ -33,7 +35,8 @@ SQL queries to insert seeds into `drivers` and `orders` is found in `/server/see
 ## Features
 
 Bonus Features can be found [here](./FEATURES.md)
-Requirements and it's completion can be found [here](./Requirements.md)
+
+All Features and requirements and it's completion can be found [here](./Requirements.md)
 
 ## Tests
 
