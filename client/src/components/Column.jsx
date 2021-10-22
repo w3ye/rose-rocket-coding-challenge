@@ -25,7 +25,7 @@ export default function DriverColumnItem(props) {
           <div className="column-header">Unassigned Orders</div>
           <div className="list">
             <CardList orders={driverOrder.orders} updateOrder={updateOrder} />
-            <Total />
+            <Total orders={driverOrder.orders} />
           </div>
         </div>
       ) : (
@@ -35,7 +35,7 @@ export default function DriverColumnItem(props) {
           </div>
           <div className="list">
             <CardList orders={driverOrder.orders} updateOrder={updateOrder} />
-            <Total />
+            <Total orders={driverOrder.orders} />
           </div>
         </div>
       )}
