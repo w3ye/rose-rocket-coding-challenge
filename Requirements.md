@@ -43,19 +43,19 @@ unassigned from the driver
 
 ## Minmimum Requirements
 
-[ ] README with clear instructions
+[X] README with clear instructions
 
-[ ] FEATURES.md a list of extra improvements or bonus features
+[X] FEATURES.md a list of extra improvements or bonus features
 
 [ ] TEST.md list of test cases for your application written in pseudocode
 
 [ ] Clear and intuitive documentation
 
-[ ] Clean code implementation and organization
+[X] Clean code implementation and organization
 
 [ ] Attention to detail, useability and consideration of edge cases
 
-[ ] Note bugs if any
+[X] Note bugs if any
 
 ## Bonus Features
 
@@ -77,7 +77,7 @@ unassigned from the driver
 
 [ ] Ability to create new drivers and orders
 
-[ ] Ability to delete drivers and orders
+[X] Ability to delete drivers and orders
 
 [X] Persist data either in a database of your choice
 

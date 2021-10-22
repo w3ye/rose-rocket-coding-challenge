@@ -13,7 +13,6 @@ export default function useOrders() {
       .catch((err) => err);
   }
 
-  // update an order
   function updateOrder(order) {
     axios
       .put("/api/orders", order)
