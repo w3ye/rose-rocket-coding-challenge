@@ -16,6 +16,7 @@ export default function OrderItem(props) {
 
   const handleEdit = () => {
     setMode("edit");
+    console.log(order);
   };
 
   const revenue = ((+order.revenue * 100) / 100).toFixed(2);
@@ -28,9 +29,11 @@ export default function OrderItem(props) {
           <span className="description">{order.description}</span>
           <span className="revenue">${revenue}</span>
           <span className="cost">${cost}</span>
-          <button type="button" className="edit" onClick={handleEdit}>
-            Edit
-          </button>
+          {order.driver_id === null && (
+            <button type="button" className="edit" onClick={handleEdit}>
+              Edit
+            </button>
+          )}
         </div>
       )}
       {mode === "edit" && (
