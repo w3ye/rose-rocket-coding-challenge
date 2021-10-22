@@ -65,7 +65,7 @@ unassigned from the driver
 
 [X] Implement some tests (unit, component, E2E)
 
-[ ] Allow Editing revenue/cost when order is assigned to a driver, the total becomes dynamic
+[X] Allow Editing revenue/cost when order is assigned to a driver, the total becomes dynamic
 
 [ ] Two users of the app can see each other's changes in real time
 
