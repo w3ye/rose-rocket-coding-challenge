@@ -64,6 +64,26 @@ module.exports = (db) => {
   };
 
   /**
+   * Retrives all orders belonging to a driver
+   * @param {Numbers} driverId driver id
+   * @returns {Promise}
+   */
+  const getOrdersByDriverId = (driverId) => {
+    return db
+      .query("SELECT * FROM orders WHERE driver_id = $1;", [driverId])
+      .then((result) => {
+        const orders = [];
+        result.rows.forEach((order) => {
+          orders.push(humanizeMoney(order));
+        });
+        return orders;
+      })
+      .catch((err) => {
+        return err;
+      });
+  };
+
+  /**
    * Update order (revenue/cost and assigning driver) to database
    * @param {Object} order order that needs to be updated
    * @returns {Promise}
@@ -102,5 +122,6 @@ module.exports = (db) => {
     getOrders,
     updateOrder,
     getOrder,
+    getOrdersByDriverId,
   };
 };

@@ -36,6 +36,11 @@ module.exports = (db) => {
       });
   };
 
+  /**
+   * Delete a driver by id
+   * @param {Number} id
+   * @returns {Promise}
+   */
   const deleteDriver = (id) => {
     return db
       .query("DELETE FROM drivers WHERE id = $1 RETURNING *;", [id])
@@ -50,5 +55,6 @@ module.exports = (db) => {
   return {
     getDrivers,
     getDriver,
+    deleteDriver,
   };
 };

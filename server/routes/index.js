@@ -19,5 +19,22 @@ module.exports = (driverDB, orderDB) => {
     });
     res.json(drivers);
   });
+
+  router.delete("/delete/driver/:id", async (req, res) => {
+    const driverId = req.params.id;
+    // Get all the orders this driver's got and unassign them
+    const orders = await orderDB.getOrdersByDriverId(driverId);
+
+    orders.forEach(async (order) => {
+      order.driver_id = null;
+      await orderDB.updateOrder(order);
+    });
+
+    // delete the driver
+    const result = await driverDB.deleteDriver(driverId);
+
+    res.json(result);
+  });
+
   return router;
 };
