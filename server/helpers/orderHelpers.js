@@ -69,8 +69,14 @@ module.exports = (db) => {
    * @returns {Promise}
    */
   const getOrdersByDriverId = (driverId) => {
+    const query =
+      driverId === null
+        ? "SELECT * FROM orders WHERE driver_id IS NULL"
+        : "SELECT * FROM orders WHERE driver_id = $1";
+    const values = driverId === null ? null : [driverId];
+
     return db
-      .query("SELECT * FROM orders WHERE driver_id = $1;", [driverId])
+      .query(query, values)
       .then((result) => {
         const orders = [];
         result.rows.forEach((order) => {
