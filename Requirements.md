@@ -38,7 +38,9 @@ unassigned from the driver
 ## Technology
 
 [X] Front end javascript
+
 [X] Backend NodeJS or GO
+
 [X] Installable and runnable
 
 ## Minmimum Requirements
