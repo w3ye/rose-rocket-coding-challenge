@@ -42,9 +42,13 @@ SQL queries to insert seeds into `drivers` and `orders` is found in `/server/see
 
 ## Features
 
-Bonus Features can be found [here](./FEATURES.md)
+Bonus Features can be found in [FEATURES.md](./FEATURES.md)
 
-All Features and requirements and it's completion can be found [here](./Requirements.md)
+All Features and requirements and it's completion can be found in [Requirements.md](./Requirements.md)
+
+## Screenshots
+
+Screenshots of the progect and be found [here](./screenshots/SCREENSHOTS.md)
 
 ## Tests
 
