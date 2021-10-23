@@ -2,6 +2,14 @@
 
 A logistic application that manages dispatch of drivers and their cargo orders.
 
+This Application is hosted using various services:
+
+- Client - Hosted on Netify
+- Server - Hosted on Heroku
+- Database - Hosted on AWS RDS
+
+On The hosted version, there is a new inclusion of the reset button that refreshes the database. Please refresh the page after clicking reset
+
 ## Font-end setup
 
 The front end of this project is written in ReactJS
@@ -39,6 +47,8 @@ Bonus Features can be found [here](./FEATURES.md)
 All Features and requirements and it's completion can be found [here](./Requirements.md)
 
 ## Tests
+
+Pseudocode for tests can be found in [TEST.md](./TEST.md)
 
 ## Dependencies
 

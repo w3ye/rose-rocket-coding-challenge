@@ -39,7 +39,7 @@ unassigned from the driver
 
 [X] Front end javascript
 [X] Backend NodeJS or GO
-[ ] Installable and runnable
+[X] Installable and runnable
 
 ## Minmimum Requirements
 
@@ -47,19 +47,19 @@ unassigned from the driver
 
 [X] FEATURES.md a list of extra improvements or bonus features
 
-[ ] TEST.md list of test cases for your application written in pseudocode
+[X] TEST.md list of test cases for your application written in pseudocode
 
-[ ] Clear and intuitive documentation
+[X] Clear and intuitive documentation
 
 [X] Clean code implementation and organization
 
-[ ] Attention to detail, useability and consideration of edge cases
+[X] Attention to detail, useability and consideration of edge cases
 
 [X] Note bugs if any
 
 ## Bonus Features
 
-[ ] Deploy app
+[X] Deploy app
 
 [ ] Back-end written in Golang
 
