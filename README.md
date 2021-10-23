@@ -29,6 +29,22 @@ SQL queries to create `drivers` and `orders` table is found in `/server/schema`
 
 SQL queries to insert seeds into `drivers` and `orders` is found in `/server/seeds`.
 
+### Prerequisites
+This project uses pg-native as a dependency. So before running `npm install` please make sure you have installed the following:
+
+#### MacOS
+* `brew install postgres`
+
+#### Ubuntu/Debian
+* `sudo apt-get install libpg-dev g++ make`
+
+#### Windows
+* Install [Visual Studio C++](https://docs.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-160)
+* Install [PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+* Add postgreSQL bin path to system path
+
+For more information checkout pg-native's [documentation](https://www.npmjs.com/package/pg-native)
+
 ### PostgresSQL setup
 
 1. Create a postgres database by running `createdb rose-rocket-challenge` in terminal OR run `CREATE DATABASE rose-rocket-challenge` within the PostgreSQL interactive terminal (psql)
