@@ -2,6 +2,8 @@
 
 A logistic application that manages dispatch of drivers and their cargo orders.
 
+Click [here](https://stupefied-dijkstra-eddaea.netlify.app/) to see the demo
+
 This Application is hosted using various services:
 
 - Client - Hosted on Netify
