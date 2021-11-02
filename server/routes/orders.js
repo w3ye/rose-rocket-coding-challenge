@@ -25,7 +25,7 @@ module.exports = (db) => {
   router.put("/", (req, res) => {
     db.updateOrder(req.body)
       .then((result) => {
-        res.json(result);
+        res.json({ success: true });
       })
       .catch((err) => {
         res.json({ error: err.message });
