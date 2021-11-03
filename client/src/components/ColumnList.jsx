@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import axios from "axios";
 import Column from "./Column";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
